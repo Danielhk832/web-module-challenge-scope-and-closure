@@ -59,6 +59,7 @@ You will be running your tests in one terminal and debugging in the other. As yo
 Edit the `ReadMe` file with your answers to the questions below.
 
 1. In your own words, define closure (1-2 sentences).
+closure is when a nested function reaches out to the parent function for a variable.
 2. Study the following code, then answer the questions below.
 
 ```js
@@ -80,9 +81,11 @@ dansRoll();
 ```
 
 a. Where is closure used in this code? How can you tell?
+the closure is when the function() console.log pulls the name parameter from the personalDice function
 b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
+the name is always the same, the newRoll value could change.
 c. What is the lexical scope of `newRoll`? 
-
+newRoll lexical scope includes the scopes of function(), personalDice, and global.
 
 ### Task 3 - Stretch Goals
 
