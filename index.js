@@ -35,7 +35,7 @@ console.log(processFirstItem(['foo','bar'],function(str){return str+str}));
 
   3. In what scenario would the counter1 code be preferable? In what scenario would 
      counter2 be better?  
-
+    counter2 would be better if you didn't need to store the count variable data, and counter1 is better if you do need to store the counte rvariable data.
 */
 
 // counter1 code
@@ -150,20 +150,10 @@ Use the scoreboard function below to do the following:
   */
 
 function scoreboard(getInningScorecb, inningcb, inningsPlayed) {
-  // let awayScore = 0;
   let awayCounter = 0;
-  // let homeScore = 0;
   let homeCounter = 0;
   const newArr = [];
-  // let gameScore = {
-  //   Home: 0,
-  //   Away: 0
-  // }
   for(let i = 0; i < inningsPlayed; i++){
-    // gameScore = {
-    //   Home: inningcb(),
-    //   Away: inningcb()
-    // }
     getInningScorecb.Away = inningcb();
     getInningScorecb.Home = inningcb();
     newArr[i] = `Inning ${i + 1}: Away ${getInningScorecb.Away} - Home ${getInningScorecb.Home}`
@@ -177,7 +167,6 @@ function scoreboard(getInningScorecb, inningcb, inningsPlayed) {
   }
   return newArr;
 }
-
 console.log(scoreboard(getInningScore, inning, 9));
 
 
