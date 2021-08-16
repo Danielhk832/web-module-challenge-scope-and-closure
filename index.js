@@ -154,11 +154,10 @@ function scoreboard(getInningScorecb, inningcb, inningsPlayed) {
   let homeCounter = 0;
   const newArr = [];
   for(let i = 0; i < inningsPlayed; i++){
-    getInningScorecb.Away = inningcb();
-    getInningScorecb.Home = inningcb();
-    newArr[i] = `Inning ${i + 1}: Away ${getInningScorecb.Away} - Home ${getInningScorecb.Home}`
-    awayCounter = awayCounter + getInningScorecb.Away;
-    homeCounter = homeCounter + getInningScorecb.Home;
+    const inningScore = getInningScorecb(inningcb);
+    newArr[i] = `Inning ${i + 1}: Away ${inningScore.Away} - Home ${inningScore.Home}`
+    awayCounter = awayCounter + inningScore.Away;
+    homeCounter = homeCounter + inningScore.Home;
   }
   if(homeCounter === awayCounter){
     newArr.push(`This game will require extra innings: Away ${awayCounter} - Home ${homeCounter}`)
